@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { TableColumnComponent } from './column.component';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit {
+export class TableComponent<T> {
+  @Input() columns: string[];
 
-  constructor() { }
+  @Input() dataSource: T[];
 
-  ngOnInit(): void {
-  }
-
+  @ContentChildren(TableColumnComponent)
+  columnDefs: QueryList<TableColumnComponent>;
 }

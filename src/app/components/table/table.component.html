@@ -1,1 +1,16 @@
-<p>table works!</p>
+<table class="list-table" cdk-table [dataSource]="dataSource">
+  <ng-container [cdkColumnDef]="item.name" *ngFor="let item of columnDefs">
+    <th cdk-header-cell *cdkHeaderCellDef>{{ item.label }}</th>
+    <td cdk-cell *cdkCellDef="let element">
+      <ng-container *ngIf="item.formatter; else noFormatter">
+        {{ item.formatter(element[item.name]) }}
+      </ng-container>
+      <ng-template #noFormatter>
+        {{ element[item.name] }}
+      </ng-template>
+    </td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="columns"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: columns"></tr>
+</table>

@@ -1,0 +1,25 @@
+::ng-deep {
+  .list-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 0;
+    position: relative;
+    font-size: 12px;
+    td,
+    th {
+      padding: 6px 12px;
+    }
+    thead {
+      text-align: left;
+      background: #f8f8f8;
+      th {
+        color: #6d6d6d;
+      }
+    }
+    tbody {
+      tr:not(:last-child) {
+        border-bottom: 1px solid #e6e6e6;
+      }
+    }
+  }
+}
