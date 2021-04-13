@@ -2,4 +2,9 @@
   <app-table-column name="id" label="ID"></app-table-column>
   <app-table-column name="title" label="Title"></app-table-column>
   <app-table-column name="author" label="Author"></app-table-column>
+  <app-table-column
+    name="price"
+    label="Price"
+    [formatter]="priceFormat"
+  ></app-table-column>
 </app-table>
