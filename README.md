@@ -15,4 +15,23 @@ A quick example showing how to make a wrapper component around the CDK Table or 
 </app-table>
 ```
 
+```typescript
+columns = ['id', 'title', 'author', 'price'];
+
+data = [
+  ...
+  {
+    id: 2,
+    title: 'The Lord of the Rings: The Two Towers',
+    author: 'J.R.R. Tolkien',
+    price: 16.99,
+  },
+  ....
+];
+
+priceFormat = (value: number) => {
+  return this.currencyPipe.transform(value);
+};
+```
+
 [Take a look at the StackBlitz demo](https://stackblitz.com/edit/angular-ivy-qokxnj?file=src/app/app.component.html)
